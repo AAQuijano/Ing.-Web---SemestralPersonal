@@ -22,7 +22,9 @@ class conectar{
         $sql = "INSERT INTO usuario(user,email,pass_usuario,id rol) values('".$username."','".$emailuser."','".$pass_user."',1) ";
         $process = mysqli_query($this->conn, $sql);
         if(!$process){
-            echo "Error". $sql . "<br>" . mysqli_error($this->conn);
+            //throw new Exception("Error".$sql."<br>".mysqli_error($this->conn));
+            //echo "Error". $sql . "<br>" . mysqli_error($this->conn);
+            echo"<script> alert('Error '".$sql."<br>".mysqli_error($this->conn).");document.location.href = '../Views/Registrar_User.php';</script>";
         }
     }
     function Data($tabla){
