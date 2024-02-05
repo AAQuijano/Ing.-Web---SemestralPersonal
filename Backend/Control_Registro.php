@@ -8,8 +8,9 @@ if(isset($_POST['botonReg'])){
     isset($_POST['user_pass2']) ? $pass2 = $_POST['user_pass2']: $pass2 = null;
     if($name_user && $pass1 && $pass2 && $email != null){
         if(strcmp($pass1,$pass2) == 0){
+
             $db = new conectar();
-            $db->Insertar($name_user,$email,$pass1);  
+            $db->Evaluar_Duplicado($name_user,$email,$pass1);  
             $db->cerrar();
             
         }else{echo"<script> alert('Las contraseñas deben ser iguales');document.location.href = '../Views/Registrar_User.php';</script>";}
@@ -19,5 +20,3 @@ if(isset($_POST['botonReg'])){
 
     }
 }
-
-?>

@@ -1,3 +1,8 @@
+<?php 
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +12,11 @@
 </head>
 <body>
     <h3>Home Usuario</h3>
+
+    <?php echo $_SESSION['id']." ".$_SESSION['usuario']; ?>
+
+
+
+
 </body>
 </html>
